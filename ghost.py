@@ -323,8 +323,6 @@ class Ghost(arcade.Sprite):
                     go_to = RIGHT
                 else:
                     go_to = LEFT
-            if self.mode == Ghost.CAUGHT:
-                print(f"X {self.center_x}| Y {self.center_y} goto {go_to} current {self.current_direction}")
             return go_to
         else:
             return HOLD
