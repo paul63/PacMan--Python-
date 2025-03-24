@@ -132,6 +132,9 @@ class GameView(arcade.Window):
         self.inst.append(arcade.Text("Press SPACE to start game without music, M with music",
             0, y - 65, AQUA, INST_FONT_SIZE, batch=self.instructions,
             width=WINDOW_WIDTH, align="center"))
+        self.inst.append(arcade.Text("Author: Paul Brace 2025",
+            0, y - 105, WHITE, INST_FONT_SIZE / 1.5, batch=self.instructions,
+            width=WINDOW_WIDTH, align="center"))
 
     def set_information(self):
         """ Create text sprites and add to the Batch"""
@@ -262,7 +265,7 @@ class GameView(arcade.Window):
         for i in range(self.lives):
             life = arcade.Sprite("images/pacOpen.png")
             life.center_x = 44 + i * 25
-            life.center_y = 20
+            life.center_y = 25
             self.scene.add_sprite("Lives", life)
 
     def set_fruit_line(self):
@@ -271,7 +274,7 @@ class GameView(arcade.Window):
         for i in range(0, self.level):
             fruit = arcade.Sprite(Dot.fruit_image[i])
             fruit.center_x = WINDOW_WIDTH - i * 25 - 40
-            fruit.center_y = 20
+            fruit.center_y = 25
             self.scene.add_sprite("Fruit", fruit)
 
     def add_new_life(self):
